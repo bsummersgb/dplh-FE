@@ -1,0 +1,47 @@
+details {
+    border: 1px solid #aaa;
+    background-color: white;
+    border-radius: 4px;
+    padding: .5em .5em 0;
+
+    &[open] {
+        padding: .5em;
+
+        summary {
+            border-bottom: 1px solid #aaa;
+            margin-bottom: .5em;
+        }
+    }
+
+    summary {
+        display: list-item;
+        background-color: @panel-heading-color;
+        font-weight: 600;
+        margin: -.5em -.5em 0;
+        padding: .5em;
+    }
+}
+
+
+dl {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+dt,
+dd {
+    width: 50%;
+    margin: 0;
+}
+
+dt {
+    font-weight: 600;
+}
+
+dd {
+    text-align: right;
+}
+
+  
+  

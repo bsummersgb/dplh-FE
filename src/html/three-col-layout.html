@@ -1,0 +1,58 @@
+//=include includes/_head.html 
+//=include includes/_header-user.html
+
+
+<div class="container-fluid max-width-xl dplh-3-col">
+    <div class="row form-row">
+      <div class="col-md-3 col-left">
+        <nav class="form-nav">
+          <button type="button" class="form-nav__toggle"><i class="fa fa-chevron-right"></i>
+          </button>
+            <ul class="stepper-vertical">
+                <li class="active">
+                    <a>
+                        Step 1
+                    </a>
+                </li>
+                <li class="">
+                    <a>
+                        Step 2
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        
+        
+
+          
+      </div>
+      <div class="col-md-6 col-centre alt-bg">
+        <!--<div class="page-heading">
+          {% block title %}
+          {% include 'Page Header' %}
+        {% endblock %}
+        </div>-->
+        <div id="mainContent">
+        
+         hello im main content
+       
+        </div>
+      </div>
+      <div class="col-md-3 col-right">
+        <div id="helpSection">
+        </div>
+    </div>
+    </div>
+   </div>
+
+   <script>
+    // Mobile nav toggle
+    var toggleBtn = document.querySelector(".form-nav__toggle");
+    var sidebar = document.querySelector(".form-nav");
+    toggleBtn.addEventListener("click", function () {
+      toggleBtn.classList.toggle("is-open");
+      sidebar.classList.toggle("is-open");
+    });
+  </script>
+
+   //=include includes/_foot.html

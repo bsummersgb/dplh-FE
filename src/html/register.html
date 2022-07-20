@@ -1,0 +1,261 @@
+//=include includes/_head.html
+//=include includes/_header.html
+
+<link href="css/account.css" rel="stylesheet">
+<div id="content-container" class="container" role="main">
+    <div id="content">
+
+
+
+        <ul class="nav nav-tabs nav-account" role="tablist" onkeydown="navigation(event)">
+            <li role="none" class=""><a role="tab" aria-selected="False" href="/SignIn?returnUrl=%2Fabout-us%2F"
+                    aria-label="Sign in" title="Sign in" tabindex="-1"><span class="fa fa-sign-in"
+                        aria-hidden="true"></span> Sign in</a></li>
+
+            <li role="none" class="active">
+                <a role="tab" aria-selected="False" href="javascript:void(0)" aria-label="Register" title="Register"
+                    tabindex="0">Register</a>
+            </li>
+
+            <li role="none" class=""><a role="tab" aria-selected="False" href="/Register?returnUrl=%2Fabout-us%2F"
+                    aria-label="Redeem invitation" title="Redeem invitation" tabindex="-1">Redeem invitation</a></li>
+
+        </ul>
+
+        <script type="text/javascript">
+
+            const keyCodes = {
+                END: 35,
+                HOME: 36,
+                LEFT: 37,
+                RIGHT: 39
+            };
+
+            $(document).ready(function () {
+                //make the tabindex='0' for active tab and -1 for others
+                $(".nav.nav-tabs.nav-account > li > a").attr("tabindex", "-1");
+                $(".nav.nav-tabs.nav-account > li.active > a").attr("tabindex", "0");
+                $(".nav.nav-tabs.nav-account > li.active > a").trigger("focus");
+            });
+
+            function navigation(e) {
+                //change tabindex dynamically for all the tabs on key press of left-right navigation keys or home/end keys
+                var tabs = $(".nav.nav-tabs.nav-account > li > a");
+                if (e.keyCode === keyCodes.END || e.keyCode === keyCodes.HOME || e.keyCode === keyCodes.LEFT || e.keyCode === keyCodes.RIGHT) {
+                    var currentTab = $(document.activeElement);
+                    for (index = 0;index < tabs.length;index++) {
+                        if ($(tabs[index]).text() === currentTab.text()) {
+                            e.keyCode === keyCodes.LEFT || e.keyCode === keyCodes.END ? (index == 0 || e.keyCode === keyCodes.END ? $(tabs[tabs.length - 1]).trigger("focus") :
+                                $(tabs[index - 1]).trigger("focus")) : (index == (tabs.length - 1) || e.keyCode === keyCodes.HOME ? $(tabs[0]).focus() : $(tabs[index + 1]).trigger("focus"));
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <div class="page-content" id="mainContent">
+
+            <span id="ContentContainer_MainContent_PageCopy_PageCopy" class="page-copy"><span
+                    class="xrm-editable-text xrm-attribute no-value page-copy"><span
+                        class="xrm-attribute-value"></span></span></span>
+
+
+            <form method="post"
+                action="./Register?returnUrl=%2Fabout-us%2F&amp;msCorrelationId=02258d4e-3480-467d-9a3c-eca3ab3f8736&amp;instanceId=72d071a4c850de508c1d7ff32b85f071b45976d387502c9f291b34ca284004e7&amp;tenantId=6c637512-c417-4e78-9d62-b61258e4b619&amp;portalId=7a5d5abf-63d7-4704-a0d2-021349a7eee2&amp;orgId=0e672566-d4eb-4388-a472-b8576f0b0388&amp;environmentId=0ba9cf0f-c85b-42a9-8f07-bf1141041f50&amp;portalApp=site-7a5d5abf-63d7-4704-a0d2-021349a7eee2-USw&amp;portalType=CDSStarterPortal&amp;portalProductionOrTrialType=Trial&amp;licenseType=PowerPortal&amp;portalDomain=https%3A%2F%2Fsg-test-portal.powerappsportals.com"
+                id="Register" data-bitwarden-watching="1">
+                <div class="aspNetHidden">
+                    <input type="hidden" name="__EVENTTARGET" id="__EVENTTARGET" value="">
+                    <input type="hidden" name="__EVENTARGUMENT" id="__EVENTARGUMENT" value="">
+                    <input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE"
+                        value="rmHuR/N8IODZH8imdjXslT5YAAuhTmHfepXJl6eMJD7JmEvyGZxWoRFK1oGKq0vas6aSgyxNg7/hLrbh+Yw1c3/p4alq7uC/p/X8uus9ZXJ3u7TWFDVPiS6Hub+uI3CE0BgSIpX5tbiC+Y8ufl3glmdEeoP/UCT+lAQ3suAoZ+waNVE8CEVR1AdrWQ+FCfqcijj/b2i+UKbHAD7cPhk/75u5/y+OlKPlzdBWYKVubP1xW1WQHjohIKu10yVusIfDBdkUXVq9Eg4bzJeL4bU2pXsSbefqBeAbcXmbKvgJrdvdNr03dcZkLnWxpxYJVZieumPjhsHlG1qWHeLERX1uWg==">
+                </div>
+
+                <script type="text/javascript">
+                    //<![CDATA[
+                    var theForm = document.forms['Register'];
+                    if (!theForm) {
+                        theForm = document.Register;
+                    }
+                    function __doPostBack(eventTarget, eventArgument) {
+                        if (!theForm.onsubmit || (theForm.onsubmit() != false)) {
+                            theForm.__EVENTTARGET.value = eventTarget;
+                            theForm.__EVENTARGUMENT.value = eventArgument;
+                            theForm.submit();
+                        }
+                    }
+//]]>
+                </script>
+
+
+                <script
+                    src="/WebResource.axd?d=pynGkmcFUV13He1Qd6_TZFDNHkj__Pwv_JCyQhCWAF-sBTC1hQhgeo6cEuvKRJt7G2amLsdcLx1_RW0h99wWVQ2&amp;t=637537027556330711"
+                    type="text/javascript"></script>
+
+
+                <script
+                    src="/ScriptResource.axd?d=NJmAwtEo3Ipnlaxl6CMhvjf3MCcVhQd9-ZgqQ3G8cuL9a9ls45P1pd0VeSqOgElbSvgkLQpjVD5Mzdop4xRWPEaAD3ucpMJ4_ceATQG9Udu89Jppp88h20RQGAyWPQbUuVY_ckiE1bbuUnGiluwA9EppdTArLJEyyDKNgjLfsVE1&amp;t=363be08"
+                    type="text/javascript"></script>
+                <script
+                    src="/ScriptResource.axd?d=dwY9oWetJoJoVpgL6Zq8ONhdqheAVek63np-df5DyufkEOvrlIPU4WHyth2MawIyjk7mBiraWhgkN5Om76osZ5xpYRZ22vo1TywnPcDpRuJTZTmBN4VR2dUZE1vVa86gNZvNSztfjBdnES5pqp1HFzRGfuNLRjP2_M-vSE72kfo1&amp;t=363be08"
+                    type="text/javascript"></script>
+                <div class="aspNetHidden">
+
+                    <input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="82F9452B">
+                    <input type="hidden" name="__VIEWSTATEENCRYPTED" id="__VIEWSTATEENCRYPTED" value="">
+                </div>
+                <script type="text/javascript">
+                    //<![CDATA[
+                    Sys.WebForms.PageRequestManager._initialize('ctl00$ctl00$ContentContainer$MainContent$MainContent$ctl00', 'Register', [], [], [], 90, 'ctl00$ctl00');
+//]]>
+                </script>
+
+                <div id="ContentContainer_MainContent_MainContent_SecureRegister">
+
+
+                    <div class="row">
+                        <div id="ContentContainer_MainContent_MainContent_LocalLogin">
+
+                            <div class="col-md-6">
+                                <div class="form-horizontal">
+                                    <fieldset>
+                                        <legend>
+                                            <span
+                                                id="ContentContainer_MainContent_MainContent_RegisterLocalFormHeading"><span
+                                                    class="xrm-editable-text xrm-attribute"><span
+                                                        class="xrm-attribute-value">Register for a new local
+                                                        account</span></span></span>
+                                        </legend>
+
+                                        <div id="ContentContainer_MainContent_MainContent_ShowEmail">
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label required" for="EmailTextBox">
+                                                    <span id="ContentContainer_MainContent_MainContent_EmailLabel"><span
+                                                            class="xrm-editable-text xrm-attribute"><span
+                                                                class="xrm-attribute-value">Email</span></span></span></label>
+                                                <div class="col-sm-8">
+                                                    <input
+                                                        name="ctl00$ctl00$ContentContainer$MainContent$MainContent$EmailTextBox"
+                                                        type="text" id="EmailTextBox" title="Email" class="form-control"
+                                                        aria-label="Email" aria-required="true">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div id="ContentContainer_MainContent_MainContent_ShowUserName">
+
+                                            <div class="form-group">
+                                                <label class="col-sm-4 control-label required" for="UserNameTextBox">
+                                                    <span
+                                                        id="ContentContainer_MainContent_MainContent_UsernameLabel"><span
+                                                            class="xrm-editable-text xrm-attribute"><span
+                                                                class="xrm-attribute-value">Username</span></span></span></label>
+                                                <div class="col-sm-8">
+                                                    <input
+                                                        name="ctl00$ctl00$ContentContainer$MainContent$MainContent$UserNameTextBox"
+                                                        type="text" id="UserNameTextBox" title="Username"
+                                                        class="form-control" aria-label="Username" aria-required="true">
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label required" for="PasswordTextBox">
+                                                <span id="ContentContainer_MainContent_MainContent_PasswordLabel"><span
+                                                        class="xrm-editable-text xrm-attribute"><span
+                                                            class="xrm-attribute-value">Password</span></span></span></label>
+                                            <div class="col-sm-8">
+                                                <input
+                                                    name="ctl00$ctl00$ContentContainer$MainContent$MainContent$PasswordTextBox"
+                                                    type="password" id="PasswordTextBox"
+                                                    title="Password is a required field." class="form-control"
+                                                    autocomplete="new-password"
+                                                    aria-label="Password is a required field." aria-required="true">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label required" for="ConfirmPasswordTextBox">
+                                                <span
+                                                    id="ContentContainer_MainContent_MainContent_ConfirmPasswordLabel"><span
+                                                        class="xrm-editable-text xrm-attribute"><span
+                                                            class="xrm-attribute-value">Confirm
+                                                            password</span></span></span></label>
+                                            <div class="col-sm-8">
+                                                <input
+                                                    name="ctl00$ctl00$ContentContainer$MainContent$MainContent$ConfirmPasswordTextBox"
+                                                    type="password" autocomplete="off" id="ConfirmPasswordTextBox"
+                                                    title="Confirm password" class="form-control"
+                                                    aria-label="Confirm password" aria-required="true">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="col-sm-offset-4 col-sm-8">
+                                                <input type="submit"
+                                                    name="ctl00$ctl00$ContentContainer$MainContent$MainContent$SubmitButton"
+                                                    value="Register" id="SubmitButton" title="Register"
+                                                    class="btn btn-primary">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div id="ContentContainer_MainContent_MainContent_ExternalLogin">
+
+                            <div class="col-md-6">
+                                <input name="__RequestVerificationToken" type="hidden"
+                                    value="0PsoZNTWrQfvSw3Co9MqaE6BOQ5Ts-5pyCw6ITauJixiBaKktcImbZBjS21WRIqTZU84zHa9fJHHc5l832lIYCcx6Utu-VaD3B7ifOjjGtw1">
+                                <div class="form-horizontal">
+                                    <fieldset>
+                                        <legend>
+                                            <span
+                                                id="ContentContainer_MainContent_MainContent_RegisterExternalLabel"><span
+                                                    class="xrm-editable-text xrm-attribute"><span
+                                                        class="xrm-attribute-value">Register using an external
+                                                        account</span></span></span>
+                                        </legend>
+                                        <div id="ContentContainer_MainContent_MainContent_ExternalLoginButtons">
+                                            <button
+                                                onclick="__doPostBack('ctl00$ctl00$ContentContainer$MainContent$MainContent$ctl01','')"
+                                                name="provider" type="submit" class="btn btn-primary btn-line"
+                                                title="Azure AD"
+                                                value="https://login.windows.net/6c637512-c417-4e78-9d62-b61258e4b619/">Azure
+                                                AD</button>&nbsp;
+                                        </div>
+                                    </fieldset>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <script type="text/javascript">
+                    $(document).ready(function () {
+                        document.querySelector('title').innerHTML = ($('.nav-tabs > li.active').text() + "&nbsp;· Starter Portal");
+                        if (portal) {
+                            $('#ValidationSummary1').attr("aria-label", "Sign up failed.");
+                            portal.UpdateValidationSummary("ValidationSummary1");
+                        }
+
+                        $("#SubmitButton").on("click", function () {
+                            $.blockUI({ message: null, overlayCSS: { opacity: .3 } });
+                        });
+
+                        $('#ContentContainer_MainContent_MainContent_ValidationSummary1').attr("aria-label", $('#ContentContainer_MainContent_MainContent_ValidationSummary1').text());
+                        $('#ContentContainer_MainContent_MainContent_ValidationSummary1').attr("tabindex", "0");
+                    });
+                </script>
+            </form>
+
+        </div>
+
+    </div>
+</div>
+
+
+//=include includes/_footer.html
+//=include includes/_foot.html

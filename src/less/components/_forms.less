@@ -1,0 +1,579 @@
+#mainContent .tab-title:not(#weblinkname) {
+  display: none;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1.6rem;
+
+  > span {
+    font-weight: 300;
+  }
+}
+
+.validators {
+  float: right;
+}
+
+.control {
+  margin-bottom: 18px;
+
+  > input[type="text"],
+  > input[type="number"],
+  > input[type="tel"],
+  > input[type="password"],
+  > input[type="search"],
+  > input[type="email"],
+  > input[type="date"] {
+    height: 50px;
+    font-size: 18px;
+    font-weight: 300;
+
+    &:placeholder {
+      color: lighten(black, 20%);
+    }
+  }
+}
+
+.text-lighter {
+  font-weight: 300;
+}
+
+.form-control {
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+  border-color: @input-border !important;
+
+  &:placeholder {
+    color: lighten(black, 20%);
+  }
+}
+
+select {
+  height: 50px;
+  font-size: 18px;
+  font-weight: 300;
+
+  &:placeholder {
+    color: lighten(black, 20%);
+  }
+}
+
+input[type="radio"] {
+  display: inline-block;
+
+  &:focus,
+  &:hover {
+    cursor: pointer;
+  }
+
+  + label {
+    margin-left: 0.25em;
+    cursor: pointer;
+  }
+}
+
+label.control-checkbox,
+label.control-radio {
+  display: block;
+  position: relative;
+  padding-left: 0.1em;
+  margin-bottom: 12px;
+  cursor: pointer;
+  transition: 0.2s all;
+
+  &:focus,
+  &:hover {
+    color: @brand-info;
+  }
+
+  > input[type="checkbox"],
+  > input[type="radio"] {
+    position: absolute;
+    top: 2px;
+  }
+
+  > span {
+    display: block;
+    margin-left: 20px;
+  }
+}
+
+.fieldset {
+  > legend {
+    border: none;
+    font-weight: 600;
+    font-size: 18px;
+  }
+
+  ul {
+    list-style: none;
+    padding-left: 0;
+
+    > li {
+      margin-bottom: 0.5em;
+    }
+  }
+}
+
+.control-large {
+  > span,
+  > label {
+    position: relative;
+    font-weight: 900;
+    margin-left: 35px;
+    cursor: pointer;
+  }
+
+  > label {
+    &:before {
+      position: absolute;
+      top: 1px;
+      left: -36px;
+      font-family: FontAwesome;
+      width: 20px;
+      height: 20px;
+      content: "";
+      border: 2px solid black;
+      font-size: 14px;
+      text-align: center;
+      line-height: 1.2;
+      background-color: white;
+    }
+  }
+
+  > input[type="checkbox"] {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    margin-top: 4px;
+    outline: none;
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    &:focus,
+    &:hover {
+      + label {
+        color: @brand-info;
+
+        &:before {
+          color: @brand-info;
+          border-color: @brand-info;
+        }
+      }
+    }
+
+    &:checked {
+      + label {
+        &:before {
+          position: absolute;
+          content: "\f058"; // @fa-var-check;
+        }
+      }
+    }
+
+    &:disabled {
+      pointer-events: none;
+
+      + label {
+        pointer-events: none;
+
+        &:before {
+          opacity: 0.25;
+        }
+      }
+
+      &:focus,
+      &:hover {
+        + label {
+          &:before {
+            opacity: 0.25;
+            color: @brand-primary;
+            border-color: @brand-primary;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  label {
+    font-size: 1.75rem;
+  }
+
+  .control-large {
+    > span,
+    > label {
+      font-size: 2.35rem;
+      margin-left: 40px;
+    }
+
+    > label {
+      &:before {
+        width: 24px;
+        height: 24px;
+        font-size: 18px;
+        line-height: 1.2;
+        left: -42px;
+        top: 4px;
+      }
+    }
+  }
+}
+
+// Override of BS input-group styles
+.input-group {
+  .input-group-btn {
+    &:last-child > .btn {
+      height: 48px;
+      border-color: @input-border;
+      .fa {
+        padding-left: 0;
+      }
+    }
+  }
+}
+
+
+.crmEntityFormView .cell .picklist input[type=radio] {
+    margin: 6px 5px 5px 0;
+    vertical-align: top;
+}
+
+// Override of preform.css for table cell padding
+.crmEntityFormView .cell {
+  padding: 0 0 20px 0;
+}
+
+// Aligns to OOTB forms with content
+// @media (min-width: @screen-sm-min) {
+//   .entity-form,
+//   #WebFormControl,
+//   #EntityFormControl {
+//     .tab-column fieldset {
+//       // margin-left: -28px;
+//       // margin-right: -28px;
+//     }
+//   }
+// }
+
+.form-control {
+  height: 48px;
+}
+
+.field-label {
+  font-weight: 500;
+}
+
+.crmEntityFormView .tab-title {
+  border-bottom: none;
+}
+
+
+
+
+
+form {
+  .description.above {
+    margin-bottom: 10px;
+    float: left;
+    margin-top: -8px;
+    font-size: @font-size-small;
+  }
+
+  fieldset {
+    legend {
+      font-size: @font-size-small;
+      margin-bottom: 0;
+      color: @brand-primary;
+      &.section-title {
+        font-family: @headings-font-family;
+        font-size: @font-size-h4;
+        font-weight: 600 !important;
+        > label.field-label {
+          font-size: 2.2rem;
+        }
+
+        // Alternative section title
+        // Powerapp form label comes through as legend. Basic form section uses section-title class.
+        // This has been used to provide additional information to forms and is sometimes quite long.
+        // Added small alternative for these cases.
+        // Devs have tended to use this format - <b>Heading</b> Information here.
+        // Couldn't update the ootb legend class name, so added this workround. Will revisit if necessary.
+
+        .section-title--small {
+          font-family: @font-family-sans-serif;
+          font-size: 1.6rem;
+          font-weight: 100;
+          b {
+            font-size: 2rem;
+          }
+        }
+      }
+
+      p {
+        font-family: @font-family-sans-serif;
+        font-size: 1.6rem;
+        font-weight: 300;
+      }
+    }
+  }
+
+// Custom Sub-Grid styles
+  .grid-actions {
+    border-bottom: none;
+    padding-bottom: 0;
+    margin-bottom: 16px;
+  }
+  .view-grid {
+    table {
+      background-color: @white;
+
+      > thead {
+        a {
+          text-decoration: none;
+        }
+        > tr {
+          > th {
+            font-size: 14px;
+            white-space: nowrap;
+            padding-top: 15px;
+            padding-bottom: 15px;
+            border-bottom: none;
+            &:first-child {
+              padding-left: 16px;
+            }
+          }
+        }
+      }
+
+      > tbody {
+        > tr {
+          &:nth-child(odd) {
+            background-color: transparent;
+          }
+
+          > td {
+            font-size: 14px;
+            &:first-child {
+              padding-left: 16px !important;
+            }
+
+            .dropdown.action {
+              li a {
+                text-decoration: none;
+                .fa-edit {
+                  display: none;
+                }
+              }
+              > .btn {
+                background-color: @white;
+                border: none;
+                color: @brand-primary;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.crmEntityFormView .boolean-radio input[type="radio"] {
+  appearance: none;
+  background-color: #fff;
+  margin-right: 20px;
+  font: inherit;
+  color: currentColor;
+  width: 20px;
+  height: 20px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 14px;
+    height: 14px;
+    display: block;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    position: absolute;
+    top:2px;
+    left: 2px;
+    box-shadow: inset 1em 1em @brand-info;
+  }
+
+  &:disabled::before {
+    box-shadow: inset 1em 1em @gray;
+  }
+
+  &:checked {
+    border: 1px solid @brand-info;
+    &:disabled {
+      border: 1px solid @gray;
+    }
+    &::before {
+      transform: scale(1);
+    }
+  }
+
+  &:focus {
+    outline: 2px dotted @brand-info;
+    outline-offset: 2px;
+  }
+}
+
+// .crmEntityFormView .boolean-radio input[type="radio"]::before {
+//   content: "";
+//   width: 14px;
+//   height: 14px;
+//   display: block;
+//   border-radius: 50%;
+//   transform: scale(0);
+//   transition: 120ms transform ease-in-out;
+//   position: absolute;
+//   top:2px;
+//   left: 2px;
+//   box-shadow: inset 1em 1em @brand-info;
+// }
+// .crmEntityFormView .boolean-radio input[type="radio"]:checked {
+//   border: 1px solid @brand-info;
+//   &:disabled {
+//     border: 1px solid @gray-darker;
+//   }
+// }
+// .crmEntityFormView .boolean-radio input[type="radio"]:checked::before {
+//   transform: scale(1);
+// }
+
+// .crmEntityFormView .boolean-radio input[type="radio"]:focus {
+//   outline: 2px dotted @brand-info;
+//   outline-offset: 2px;
+// }
+
+// Switch radio buttons in DOM
+.boolean-radio {
+  display: flex;
+
+  > span:first-of-type {
+    order: 2;
+  }
+
+  > [value="0"] {
+    margin-left: 20px !important;
+    order: 3;
+  }
+  
+  > [value="0"] + label {
+    order: 4;
+  }
+  
+  > [value="1"] {
+    margin-left: 0 !important;
+  }
+
+  .aspNetDisabled {
+    &:first-child {
+      margin-left: 10px;
+    }
+    input[type="radio"] {
+      margin-left: 0 !important;
+    }
+  }
+}
+
+// Removes excess bottom padding on last radiogroup within a fieldset
+tr:last-of-type  .cell {
+  padding-bottom: 0 !important;  
+}
+
+// Readonly form styles
+.form-summary {
+  .control > *:not(:last-child):not(dl), 
+  .info, 
+  p, 
+  .table-striped, 
+  legend, 
+  .panel-title, 
+  [aria-label="There are no records to display."],
+  .list-required-documents,
+  fieldset[aria-label*="Required documents"]
+  {
+    display:none !important;
+  }
+
+  details {
+    + * {
+      margin-top: 32px;
+    }
+    
+    .page-description {
+      display: none;
+    }
+    .tab {
+      margin: 0;
+    }
+  }
+
+  dl {
+    margin-bottom: 0;
+    padding: 16px;
+  }
+
+  .control {
+    margin-bottom: 0;
+  }
+
+  fieldset, td.cell {
+    margin: 0;
+  }
+
+  td.cell {
+    padding: 0;
+  }
+}
+
+
+// .subgrid-cell {
+//   .info {
+//     position: relative;
+//     label {
+//       position: absolute;
+//       top: 24px;
+//       font-weight: 600;
+//       font-size: 20px;
+//     }
+//   }
+//   .view-empty.message,
+//   .view-access-denied.message,
+//   .view-error.message {
+//     position: relative;
+//     margin-top: -72px;
+//   }
+// }
+
+
+fieldset[aria-label$="fieldset-header"] {
+  background: #e3e3e3;
+  padding: 16px;
+  margin-bottom: 0;
+}
+
+fieldset[aria-label$="fieldset-body"] {
+  background: white;
+  padding: 16px;
+  margin-bottom: 0;
+}
+
+fieldset[aria-label$="fieldset-header"] ~ fieldset[aria-label$="fieldset-header"] {
+  margin-top:24px;
+}
+
+fieldset ol {
+  list-style: none;
+}

@@ -1,0 +1,181 @@
+.btn {
+  padding: 1rem 1.36rem;
+  font-weight: 500;
+  letter-spacing: normal;
+  background-color: @brand-primary;
+  border-color: @brand-primary;
+  color: white;
+  transition: 0.2s all;
+  text-decoration: none;
+  white-space: normal;
+  border-radius: 0;
+  &:active:focus,
+  &:hover,
+  &:focus {
+    background-color: @brand-info;
+    border-color: @brand-info;
+    outline: 0;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.25;
+  }
+
+  span + .fa {
+    padding: 0 0 0 0.25em;
+    margin: 0;
+  }
+
+  .fa + span {
+    padding: 0 0.25em 0 0;
+    margin: 0;
+  }
+}
+
+.btn-default {
+  background-color: white;
+  border-color: @brand-primary;
+  color: @brand-primary;
+
+  &:active:focus,
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: white;
+    border-color: @brand-info;
+    color: @brand-info;
+  }
+}
+
+.btn-secondary {
+  background-color: @brand-info;
+  border-color: @brand-info;
+  color: white;
+
+  &:active:focus,
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: @brand-primary;
+    border-color: @brand-primary;
+    color: white;
+  }
+}
+
+.btn-sm {
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+}
+
+.btn-lg {
+  padding: 1.25em 2em;
+}
+
+.btn-outline {
+  background-color: white;
+  border-color: @brand-primary;
+  color: @brand-primary;
+
+  &:active:focus,
+  &:hover,
+  &:focus {
+    outline: 0;
+    background-color: white;
+    border-color: @brand-info;
+    color: @brand-info;
+  }
+}
+
+
+
+// .btn-success {
+
+//     &:before {
+//         font-family : FontAwesome;
+//         content     : '@fa-var-close';
+//         margin-right: .25em;
+//     }
+
+//     &:not(:disabled) {
+
+//         background-color: @brand-success;
+//         border-color    : @brand-success;
+
+//         &:before {
+//             content: @fa-var-check-circle;
+//         }
+
+//     }
+
+// }
+
+// .btn-loading {
+//     position      : relative;
+//     pointer-events: none;
+//     padding-left  : 35px;
+
+//     &:before {
+//         position       : absolute;
+//         // top         : 50%;
+//         left           : 20px;
+//         //transform   : translateY(-50%);
+//         font-family    : FontAwesome;
+//         content        : @fa-var-spinner;
+//         margin-right   : .25em;
+//         animation      : spin 4s linear infinite;
+//     }
+
+//     &:disabled {
+//         opacity: 1;
+//     }
+// }
+
+// .btn-link {
+//     text-decoration: none;
+//     font-weight    : 600;
+//     font-size      : 1.25em;
+
+//     &:after {
+//         font-family: FontAwesome;
+//         content    : @fa-var-angle-right;
+//         margin     : 0 .45em;
+//     }
+
+//     &:active:focus,
+//     &:hover,
+//     &:focus {
+//         text-decoration: none;
+//         color          : @brand-info;
+//     }
+// }
+
+// .btn-link-sm {
+//     font-size : .9em;}
+
+// .btn-link-icon {
+//     text-decoration: none;
+//     font-weight    : 600;
+
+//     // font-size      : 1.25em;
+//     &:active:focus,
+//     &:hover,
+//     &:focus {
+//         text-decoration: none;
+//         color          : @brand-info;
+//     }
+
+//     span+.fa {
+//         margin-left: .25em;
+//     }
+
+//     .fa+span {
+//         margin-right: .25em;
+//     }
+// }
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,40 @@
+.actions {
+  margin-top: 3em;
+  background-color: unset;
+  display: flex;
+  justify-content: center;
+  input[type="button"] {
+    margin-right: 0 !important;
+    + input[type="button"] {
+      margin-left: 16px;
+    }
+  }
+
+  [class*="col"] {
+    width: 100% !important;
+    float: none;
+    clear: both;
+
+    > .btn-group {
+      &:last-child {
+        float: right;
+      }
+    }
+  }
+}
+
+iframe .actions {
+  justify-content: end;
+  padding-right: 0;
+}
+
+.crmEntityFormView .actions {
+  border-top: none;
+  padding: 0.5em 0.5em;
+  [class*="col-"] {
+    padding: 0;
+    .entity-action-button input {
+      margin-right: 0;
+    }
+  }
+}

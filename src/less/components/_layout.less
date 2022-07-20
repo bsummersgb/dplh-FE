@@ -1,0 +1,541 @@
+// Creates sticky footer
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  display: flex;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: auto;
+  flex-direction: column;
+}
+
+.header,
+.footer {
+  flex-shrink: 0;
+}
+
+.site-container {
+  min-height: 100%;
+}
+
+// watch out for the <form> element!
+body {
+  > form {
+    flex-grow: 1;
+  }
+}
+
+.breadcrumb {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  background-color: transparent;
+}
+
+.page-actions {
+  margin-top: 3em;
+}
+
+// 3-column layout
+@stepperFooterHeight: 77px;
+
+.max-width-xl {
+  max-width: 1640px;
+}
+
+.dplh-3-col {
+  flex-grow: 1;
+
+  .form-row {
+    height: 100%;
+    .col-left,
+    .col-right,
+    .col-centre {
+      padding-top: 32px;
+    }
+  }
+
+  // .col-left {
+  //   position: fixed;
+  //   z-index: 10;
+  //   background: white;
+  //   width: 95%;
+  //   transition-property: width, min-width;
+  //   transition-duration: 0.3s;
+  //   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  // }
+  #navigationbtns {
+    height: @stepperFooterHeight;
+    padding: 16px;
+    z-index: 10;
+    bottom: 0;
+    background: @alt-bg;
+    box-shadow: #ccc 0px 0px 4px;
+    display: flex;
+    justify-content: space-between;
+    margin-left: -15px;
+    margin-right: -15px;
+    input[type="button"] + input[type="button"] {
+      margin-left: 8px;
+    }
+
+    #unlockappform {
+      width: 0;
+
+      input[title="Unlock Application"] {
+        position: absolute;
+        top: -45px;
+        white-space: nowrap;
+      }
+    }
+  }
+}
+
+.alt-bg {
+  background-color: @alt-bg;
+}
+
+.form-nav__header > * {
+  font-size: 20px;
+}
+
+ul.stepper-vertical {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  margin-top: 20px;
+
+  li {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    color: @gray;
+
+    a {
+      text-decoration: none;
+      text-align: left;
+      font-size: inherit;
+      display: block;
+      padding: 4px 8px 8px 40px !important;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &:not(:last-child):before {
+      content: "";
+      position: absolute;
+      display: block;
+      left: 13px;
+      top: 16px;
+      bottom: -32px;
+      width: 2px;
+      height: auto;
+      background: lightgrey;
+      pointer-events: none;
+      transition: all ease-in-out 0.3s;
+    }
+
+    &:after {
+      content: "";
+      position: absolute;
+      display: block;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    &:not(:first-child) {
+      margin-top: 24px;
+    }
+    margin-bottom: 4px;
+    padding-bottom: 8px;
+
+    &:after {
+      left: 2px;
+      top: 4px;
+      width: 24px;
+      height: 24px;
+      background: #fff;
+      border: 2px solid lightgrey;
+    }
+
+    &.active:after {
+      color: @brand-primary;
+      border-color: @brand-primary;
+      font-weight: 700;
+      content: url(@bg-icon-mainstep-active);
+    }
+
+    &.active a {
+      font-weight: 600;
+    }
+
+  }
+}
+
+#helpSection {
+  h2 {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: @screen-sm-max) {
+  .page-actions {
+    margin-top: 2em;
+    > .btn {
+      width: 100%;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  .dplh-3-col {
+    .form-row {
+      height: 100%;
+      .col-left,
+      .col-right,
+      .col-centre {
+        overflow-y: auto;
+        overflow-x: hidden;
+        height: calc(100vh - 64px) !important;
+        position: relative;
+      }
+      // .col-left {
+      //   position: relative;
+      //   width: 25%;
+      // }
+    }
+    .form-nav__toggle {
+      display: none;
+    }
+    #mainContent {
+      min-height: calc(100% - @stepperFooterHeight);
+    }
+    // Container for Next, Previous, & Save buttons
+    #navigationbtns {
+      position: sticky;
+    }
+  }
+  .page-title {
+    display: flex;
+    align-items: center;
+    &.right-align-btn {
+      > .btn {
+        margin-left: auto;
+      }
+    }
+  }
+}
+
+
+
+
+.toggle-side-nav {
+  position: fixed;
+  z-index: 2;
+  bottom: 20px;
+  height: 48px;
+  width: 48px;
+}
+
+.form-nav__toggle {
+  position: absolute;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  height: 32px;
+  width: 44px;
+  top: 0;
+  left: -24px;
+  border: none;
+  border-radius: 20px;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  margin: 8px 8px 8px 0;
+  padding: 10px 10px 10px 0;
+  background-color: #fff;
+  border: 1px solid @input-border;
+  box-shadow: 0 1px 1px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+fieldset[aria-label*="Required documents"] {
+  background-color: #d3d3d3;
+  position: relative;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-bottom: 20px;
+  padding: 16px;
+  border-radius: 4px;
+  legend {
+    padding: 0;
+    position: absolute;
+    top: 16px;
+  }
+  ul {
+    margin-top: 16px;
+    margin-bottom: 0;
+    padding-left: 32px;
+  }
+
+  td.clearfix.cell {
+    padding: 16px !important;
+    background-color: #fcf8e3;
+    h4 {
+      font-weight: 600;
+      font-size: 18px;
+      margin-bottom: -8px;
+    }
+    ul {
+      padding-left: 28px;
+      margin-bottom: 0;
+      margin-top:0;
+    }
+  }
+}
+
+.panel {
+  border-radius: 4px;
+  > .panel-heading {
+    padding: 16px;
+    border-top-right-radius: 3px;
+    border-top-left-radius: 3px;
+  }
+  .panel-title {
+    color: @brand-primary;
+    font-size: 2rem;
+   }
+   h2 {
+    font-size: 1.8rem;
+   }
+   &.dplh-panel {
+     margin: 32px auto;
+     width: 90%;
+   }
+   [aria-label="DisclosureContent"] {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+   }
+}
+
+@media (min-width: @screen-md-min) {
+  .panel {
+    .panel-title {
+      font-size: 2.5rem;
+    }
+    h2 {
+      font-size: 2rem;
+    }
+     &.dplh-panel {
+       margin: 48px auto;
+       width: 60%;
+     }
+     
+  }
+
+}
+
+
+
+
+// Modal styles
+// close button on modals
+.form-close {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  color: #000;
+  position: absolute;
+  top: 0.8% !important;
+}
+
+[action*="modal-form-template-path"] {
+  .actions {
+    padding: 0 !important;
+    margin: -32px 0 0 0 !important;
+    justify-content: end;
+  }
+}
+
+.form-close:focus, .form-close:hover {
+  color: @brand-info;
+  opacity: 1;
+}
+
+
+.modal-title .fa-pencil-square-o {
+  display: none;
+}
+
+// I feel dirty writing this one... this removes the space taken up by
+// input error message when there isn't one active. Sorry! Blame the
+// Microsoft developers!
+.validators [style*="visibility:hidden"] {
+  display: none;
+}
+
+
+
+// Table not inside a <form>
+
+
+// Icons
+.fa-warning {
+  color: @brand-danger;
+}
+
+.fa-check {
+  color: @brand-success;
+}
+
+
+// General Table
+td {
+  font-weight: 400;
+}
+
+// Dashboard pages
+.context-dashboard {
+  margin-top: 24px;
+  padding-bottom: 0;
+
+  .grid-actions {
+    border-bottom: none;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  table {
+    border: 1px solid @table-border-color;
+  }
+
+  th {
+    background-color: @panel-heading-color;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    .fa {
+      top:0;
+    }
+    a { 
+      font-weight: 600;
+    }
+  }
+
+  td .dropdown {
+    > .btn {
+      border: none;
+      background-color: transparent;
+    }
+    ul {
+      a {
+        color:#000;
+      }
+      .fa {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (min-width: @screen-sm-min) {
+  .context-dashboard {
+    margin-top: 40px;
+  }
+}
+
+
+a.link-disabled {
+  color: #919191;
+  &::before {
+    position: absolute;
+    top: 4px;
+    left: -1px;
+    z-index: 100;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 24px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin-right: 0;
+    content: '\e033';
+    font-size: small;
+    border-radius: 50%;
+    height: 24px;
+    width: 24px;
+    background: #919191;
+    text-indent: 6px;
+    color: black;
+  }
+}
+
+
+// Included in preform css but sometimes disappears?
+.skip-to-content a {
+  background: #00668d;
+  border-radius: 2px;
+  color: #fff;
+  font-size: 14px;
+  left: 0;
+  padding: 10px 20px;
+  position: absolute;
+  top: -43px;
+  -webkit-transition: top 1s ease-out;
+  transition: top 1s ease-out;
+  z-index: 999999;
+}
+.skip-to-content a:focus {
+  color: #fff;
+  left: 0;
+  outline: 0;
+  position: absolute;
+  top: 0;
+  -webkit-transition: top 0.1s ease-in;
+  transition: top 0.1s ease-in;
+}
+
+
+#validationsuccess {
+  margin-top: 24px;
+
+  h3 {
+    color: #3c763d;
+    font-weight: 600;
+    font-size: 24px;
+  }
+
+  .alert {
+    color: black;
+  }
+}
+
+
+// Extract into fee component 
+.fee-summary {
+  dl {
+    font-size: 1.8rem;
+  }
+  dd ~ dd, 
+  dt ~ dt {
+    margin-top: 8px;
+  }
+  .fee-amount {
+    font-size: 18px;
+    display: flex;
+    color: black;
+    margin-bottom: 0;
+  }
+  .fee-method {
+    font-weight: 600;
+  }
+}

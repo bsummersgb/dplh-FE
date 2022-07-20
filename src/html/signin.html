@@ -1,0 +1,193 @@
+//=include includes/_head.html
+//=include includes/_header.html
+
+
+<link href="css/account.css" rel="stylesheet">
+
+<div id="content-container" class="signin">
+    <div id="content">
+
+        <ul class="nav nav-tabs nav-account" role="tablist" onkeydown="navigation(event)">
+            <li class="active"><a role="tab" aria-selected="True" href="javascript:void(0)" aria-label="Sign in"
+                    title="Sign in" tabindex="0"><span class="fa fa-sign-in" aria-hidden="true"></span> Sign in</a>
+            </li>
+
+            <li class=""><a role="tab" aria-selected="False" href="/Register?returnUrl=%2F"
+                    aria-label="Redeem invitation" title="Redeem invitation" tabindex="-1">Redeem invitation</a>
+            </li>
+
+        </ul>
+
+        <script type="text/javascript">
+
+            const keyCodes = {
+                END: 35,
+                HOME: 36,
+                LEFT: 37,
+                RIGHT: 39
+            };
+
+            $(document).ready(function () {
+                //make the tabindex='0' for active tab and -1 for others
+                $(".nav.nav-tabs.nav-account > li > a").attr("tabindex", "-1");
+                $(".nav.nav-tabs.nav-account > li.active > a").attr("tabindex", "0");
+                $(".nav.nav-tabs.nav-account > li.active > a").focus();
+            });
+
+            function navigation(e) {
+                //change tabindex dynamically for all the tabs on key press of left-right navigation keys or home/end keys
+                var tabs = $(".nav.nav-tabs.nav-account > li > a");
+                if (e.keyCode === keyCodes.END || e.keyCode === keyCodes.HOME || e.keyCode === keyCodes.LEFT || e.keyCode === keyCodes.RIGHT) {
+                    var currentTab = $(document.activeElement);
+                    for (index = 0;index < tabs.length;index++) {
+                        if ($(tabs[index]).text() === currentTab.text()) {
+                            e.keyCode === keyCodes.LEFT || e.keyCode === keyCodes.END ? (index == 0 || e.keyCode === keyCodes.END ? $(tabs[tabs.length - 1]).focus() :
+                                $(tabs[index - 1]).focus()) : (index == (tabs.length - 1) || e.keyCode === keyCodes.HOME ? $(tabs[0]).focus() : $(tabs[index + 1]).focus());
+                        }
+                    }
+                }
+            }
+        </script>
+
+        <div class="page-content">
+
+            <div class="xrm-editable-html xrm-attribute page-copy">
+                <div class="xrm-attribute-value">
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            $("#content-container").removeClass("container");
+                            $("#content-container").addClass("signin");
+                        });
+//   $(document).ready(function () {
+//     $("#content-container").removeClass("container");
+//     $("#content-container").addClass("container-fluid");
+//     var str =
+//       '<div class="col-md-5 signin-bg" ></div><div class="col-md-7"><div class="margin-top-20">&nbsp;</div>';
+//     $("#content-container").prepend(str);
+//     $("#content").wrap("<div class='col-md-7'></div>");
+//     var passwordstr =
+//       '<span class="pull-right"><a role="button" href="../Account/Login/ForgotPassword" title="Forgot your password?">Forgot your password?</a></span><div class="">';
+
+//     //$("#Password").after(passwordstr);
+//     //$(".btn-default").hide();
+//   });
+                    </script>
+                </div>
+            </div>
+
+
+
+            <div class="row">
+
+                <div class="col-md-6">
+                    <form action="/SignIn?ReturnUrl=%2F" method="post"><input name="__RequestVerificationToken"
+                            type="hidden"
+                            value="rMA0aHeh5N_rT_HQnuKRlwXWf4MruxzuSOO6J9fyb-rjHD9QxKEiJAscG-BM7cQmgym8eC2AMlS4hXDZsmrq5mS9v_amDzIjWpPF5AcBiEQ1">
+                        <div class="form-horizontal">
+                            <fieldset aria-labelledby="local-login-heading">
+                                <h4 class="login-heading-section" id="local-login-heading">
+                                    <span class="xrm-editable-text xrm-attribute"><span
+                                            class="xrm-attribute-value-encoded xrm-attribute-value">Sign in with a
+                                            local account</span></span>
+                                </h4>
+                                <div aria-describedby="loginValidationSummary" aria-label="Sign in failed."
+                                    class="validation-summary-valid alert alert-block alert-danger"
+                                    data-valmsg-summary="true" id="loginValidationSummary" tabindex="0" role="alert"
+                                    aria-live="assertive">
+                                    <ul>
+                                        <li style="display:none"></li>
+                                    </ul>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label" for="Email"><span
+                                            class="xrm-editable-text xrm-attribute"><span
+                                                class="xrm-attribute-value-encoded xrm-attribute-value">Email</span></span></label>
+                                    <div class="col-sm-8">
+                                        <input class="form-control" data-val="true"
+                                            data-val-email="The Email field doesn’t contain a valid email address."
+                                            id="Email" name="Email" type="text" value="" autocomplete="off"
+                                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAYdJREFUOBGVVLuKwkAUPTErioVgY5WF2AhpFKz8AC0W0vgTK9injvkMt7HyB6zWSuy1s1WRXUJQ0cJCxSLOnSSzcYmaDGTmPs45M3fuEMmyrA/XdXvse0eMIUnSD4N9drvdb4KnkpCJ4G/0RTYNEoi1swf35jAnFU68snO5HMrl8h0skYCqqmg0GtEC2WxWJDKZDNhlCT+cE0HfeKNV13XUajUMBgPs93t0Oh3Yto1+v3+X+08mP1EJUQKSaZouJeiY5/OZY6iEy+UShRcxVuIvc9riBAGZEK/IhGGtVNjS43dAgWej2WyiUqlAlmWs12sMh0OcTicuIk7wTOBwOGA+n2O5XELTNJRKJQFP+W9bBKKM6XSK4/GIfD4Px3G4UIAjgXYckXq9DkVRsN1ukU6nAz7+XosIeUbQHfKIcL1eUa1W0Wq1MB6PMZlMODDWJRqGgd1uh0KhwEmbzYavND0UoD77rcJoNEKxWOS1LxYLrFYrLkCYhwIMQXdDPxplNptxQngiMmFuABiQmENn7wkAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label class="col-sm-4 control-label required" for="Password"><span
+                                            class="xrm-editable-text xrm-attribute"><span
+                                                class="xrm-attribute-value-encoded xrm-attribute-value">Password</span></span></label>
+                                    <div class="col-sm-8">
+                                        <input aria-label="Password is a required field." autocomplete="off"
+                                            class="form-control" id="Password" name="Password"
+                                            title="Password is a required field." type="password" aria-required="true"
+                                            style="background-image: url(&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAASCAYAAABSO15qAAAAAXNSR0IArs4c6QAAAYdJREFUOBGVVLuKwkAUPTErioVgY5WF2AhpFKz8AC0W0vgTK9injvkMt7HyB6zWSuy1s1WRXUJQ0cJCxSLOnSSzcYmaDGTmPs45M3fuEMmyrA/XdXvse0eMIUnSD4N9drvdb4KnkpCJ4G/0RTYNEoi1swf35jAnFU68snO5HMrl8h0skYCqqmg0GtEC2WxWJDKZDNhlCT+cE0HfeKNV13XUajUMBgPs93t0Oh3Yto1+v3+X+08mP1EJUQKSaZouJeiY5/OZY6iEy+UShRcxVuIvc9riBAGZEK/IhGGtVNjS43dAgWej2WyiUqlAlmWs12sMh0OcTicuIk7wTOBwOGA+n2O5XELTNJRKJQFP+W9bBKKM6XSK4/GIfD4Px3G4UIAjgXYckXq9DkVRsN1ukU6nAz7+XosIeUbQHfKIcL1eUa1W0Wq1MB6PMZlMODDWJRqGgd1uh0KhwEmbzYavND0UoD77rcJoNEKxWOS1LxYLrFYrLkCYhwIMQXdDPxplNptxQngiMmFuABiQmENn7wkAAAAASUVORK5CYII=&quot;); background-repeat: no-repeat; background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%;">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <div class="checkbox">
+                                            <label>
+                                                <input data-val="true"
+                                                    data-val-required="The RememberMe field is required."
+                                                    id="RememberMe" name="RememberMe" type="checkbox"
+                                                    value="true"><input name="RememberMe" type="hidden" value="false">
+                                                <span class="xrm-editable-text xrm-attribute"><span
+                                                        class="xrm-attribute-value-encoded xrm-attribute-value">Remember
+                                                        me?</span></span>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-sm-offset-4 col-sm-8">
+                                        <button id="submit-signin-local" class="btn btn-primary" title="Sign in">Sign
+                                            in</button>
+
+                                        <a class="btn btn-default" role="button" href="/Account/Login/ForgotPassword"
+                                            title="Forgot your password?">Forgot your password?</a>
+
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </div>
+                    </form>
+                    <script type="text/javascript">
+                        $(function () {
+                            $("#submit-signin-local").click(function () {
+                                $.blockUI({ message: null, overlayCSS: { opacity: .3 } });
+                            });
+                        });
+                        $(document).ready(function () {
+                            if (portal) {
+                                portal.SetValidationSummary("loginValidationSummary");
+                            }
+                        });
+                    </script>
+
+                </div>
+
+            </div>
+            <script type="text/javascript">
+                $(document).ready(function () {
+                    document.querySelector('title').innerHTML = ($('.nav-tabs > li.active').text() + "&nbsp;· Customer Self-Service");
+                    shell.refreshToken();
+                    if ($('#loginValidationSummary').length) {
+                        if ($('#loginValidationSummary').find('li').length > 0) {
+                            $('#loginValidationSummary').attr("role", "alert");
+                            $('#loginValidationSummary').attr("aria-live", "assertive");
+                            $('#loginValidationSummary').focus();
+                        }
+                    }
+                });
+            </script>
+
+        </div>
+
+    </div>
+</div>
+
+
+
+//=include includes/_footer.html
+//=include includes/_foot.html

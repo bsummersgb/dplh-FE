@@ -1,0 +1,183 @@
+:root {
+  accent-color: @brand-info;
+}
+
+html,
+body {
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-weight: 400;
+}
+
+a {
+  position: relative;
+  transition: 0.2s color, 0.2s background, 0.2s border;
+  font-weight: 500;
+  text-decoration: underline;
+
+  &:hover,
+  &:focus {
+    outline: 0;
+    color: @brand-info;
+    border-color: @brand-info;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 0.5em;
+}
+
+.form-title {
+  font-size: 1.75rem;
+}
+
+p,
+li {
+  font-weight: 400;
+  font-size: 17.92px;
+  line-height: 26.88px;
+}
+
+ol {
+  padding: 0;
+}
+
+small,
+.small {
+  font-size: 1rem;
+}
+
+strong,
+.strong,
+.strong label,
+.checkbox label.strong {
+  font-weight: 600;
+  i {
+    margin: 0 0.33em;
+  }
+}
+
+.thin {
+  font-weight: 300;
+}
+
+table {
+  width: 100%;
+}
+
+i {
+  margin-right: 0.7rem;
+}
+
+.spacer {
+  display: block;
+  clear: both;
+  float: none;
+  height: 30px;
+}
+
+@media (min-width: @screen-sm-min) {
+  p,
+  li {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: @screen-md-min) {
+  p,
+  li {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: @screen-md-max) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3,
+  .form-title {
+    font-size: 1.5rem;
+  }
+}
+div:empty {
+  display: none;
+}
+
+@media (max-width: @screen-xs-max) {
+  .show-desktop {
+    display: none !important;
+  }
+}
+@media (min-width: @screen-xs) {
+  .show-mobile {
+    display: none !important;
+  }
+}
+
+.icon-info {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  min-width: 24px;
+  margin-bottom: -6px;
+  background-image: url("data:image/svg+xml,%3Csvg id='Component_49' data-name='Component 49' xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle id='Ellipse_1' data-name='Ellipse 1' cx='12' cy='12' r='12'/%3E%3Cpath id='Path_95' data-name='Path 95' d='M4.477-20.317a1.306,1.306,0,0,1,.967.4,1.319,1.319,0,0,1,.393.962,1.311,1.311,0,0,1-.4.962,1.311,1.311,0,0,1-.962.4,1.3,1.3,0,0,1-.953-.4,1.311,1.311,0,0,1-.4-.962,1.319,1.319,0,0,1,.393-.962A1.3,1.3,0,0,1,4.477-20.317Zm.574,4.256-1.9,6.578A3.637,3.637,0,0,0,3-8.744a.272.272,0,0,0,.083.19.242.242,0,0,0,.176.088A.478.478,0,0,0,3.57-8.6a5.661,5.661,0,0,0,1-1.24l.315.185q-1.4,2.433-2.97,2.433a1.335,1.335,0,0,1-.958-.338A1.128,1.128,0,0,1,.6-8.42a3.176,3.176,0,0,1,.157-.87l1.286-4.422a3.82,3.82,0,0,0,.185-.962.473.473,0,0,0-.176-.361.7.7,0,0,0-.481-.157q-.139,0-.333.009l.12-.37L4.5-16.062Z' transform='translate(8.621 26.433)' fill='%23fff'/%3E%3C/svg%3E%0A");
+}
+
+.tab-title {
+  border: none;
+}
+
+.breadcrumb > .active {
+    color: #757575;
+}
+
+
+.crmEntityFormView div.description.below {
+    margin: 30px 30px 0;
+}
+
+/* ----------------------------------------------------------------------------
+	Custom Scrollbar Styles
+---------------------------------------------------------------------------- */
+@scrollbarBG: transparent;
+@thumbBG: #aaa;
+
+body * {
+  scrollbar-width: thin;
+  scrollbar-color: @thumbBG @scrollbarBG;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: @scrollbarBG;
+    -webkit-box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: @thumbBG;
+    border: 3px solid @scrollbarBG;
+  }
+}
